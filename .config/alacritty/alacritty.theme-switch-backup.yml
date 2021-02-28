@@ -1,0 +1,269 @@
+env:
+  TERM: xterm-256color
+window:
+  dimensions:
+    columns: 100
+    lines: 35
+  padding:
+    x: 20
+    'y': 20
+  dynamic_padding: false
+  decorations: full
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+  bold:
+    family: JetBrainsMono Nerd Font Mono
+  italic:
+    family: JetBrainsMono Nerd Font Mono
+  size: 11
+  offset:
+    x: 0
+    'y': 0
+  glyph_offset:
+    x: 0
+    'y': 0
+  use_thin_strokes: true
+draw_bold_text_with_bright_colors: false
+colors:
+  primary:
+    background: '0xffffff'
+    foreground: '0x121e64'
+    dim_foreground: '#a5abb6'
+    bright_foreground: '0xd9d9d9'
+    dim_background: '0x202020'
+    bright_background: '0x3a3a3a'
+  normal:
+    black: '0x24282e'
+    red: '0xdd0018'
+    green: '0x50a14f'
+    yellow: '0xf15500'
+    blue: '0x3130c9'
+    magenta: '0x8500c4'
+    cyan: '0x0096bf'
+    white: '0xfafafa'
+  bright:
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
+  cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  indexed_colors: []
+  dim:
+    black: '#373e4d'
+    red: '#94545d'
+    green: '#809575'
+    yellow: '#b29e75'
+    blue: '#68809a'
+    magenta: '#8c738c'
+    cyan: '#6d96a5'
+    white: '#aeb3bb'
+  vi_mode_cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  selection:
+    text: CellForeground
+    background: '#4c566a'
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#88c0d0'
+    bar:
+      background: '#434c5e'
+      foreground: '#d8dee9'
+bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+background_opacity: 1
+key_bindings:
+  - key: V
+    mods: Command
+    action: Paste
+  - key: C
+    mods: Command
+    action: Copy
+  - key: Q
+    mods: Command
+    action: Quit
+  - key: 'N'
+    mods: Command
+    action: SpawnNewInstance
+  - key: Return
+    mods: Command
+    action: ToggleFullscreen
+  - key: Home
+    chars: "\eOH"
+    mode: AppCursor
+  - key: Home
+    chars: "\e[H"
+    mode: ~AppCursor
+  - key: End
+    chars: "\eOF"
+    mode: AppCursor
+  - key: End
+    chars: "\e[F"
+    mode: ~AppCursor
+  - key: Equals
+    mods: Command
+    action: IncreaseFontSize
+  - key: Minus
+    mods: Command
+    action: DecreaseFontSize
+  - key: Minus
+    mods: Command|Shift
+    action: ResetFontSize
+  - key: PageUp
+    mods: Shift
+    chars: "\e[5;2~"
+  - key: PageUp
+    mods: Control
+    chars: "\e[5;5~"
+  - key: PageUp
+    chars: "\e[5~"
+  - key: PageDown
+    mods: Shift
+    chars: "\e[6;2~"
+  - key: PageDown
+    mods: Control
+    chars: "\e[6;5~"
+  - key: PageDown
+    chars: "\e[6~"
+  - key: Left
+    mods: Shift
+    chars: "\e[1;2D"
+  - key: Left
+    mods: Control
+    chars: "\e[1;5D"
+  - key: Left
+    mods: Alt
+    chars: "\e[1;3D"
+  - key: Left
+    chars: "\e[D"
+    mode: ~AppCursor
+  - key: Left
+    chars: "\eOD"
+    mode: AppCursor
+  - key: Right
+    mods: Shift
+    chars: "\e[1;2C"
+  - key: Right
+    mods: Control
+    chars: "\e[1;5C"
+  - key: Right
+    mods: Alt
+    chars: "\e[1;3C"
+  - key: Right
+    chars: "\e[C"
+    mode: ~AppCursor
+  - key: Right
+    chars: "\eOC"
+    mode: AppCursor
+  - key: Up
+    mods: Shift
+    chars: "\e[1;2A"
+  - key: Up
+    mods: Control
+    chars: "\e[1;5A"
+  - key: Up
+    mods: Alt
+    chars: "\e[1;3A"
+  - key: Up
+    chars: "\e[A"
+    mode: ~AppCursor
+  - key: Up
+    chars: "\eOA"
+    mode: AppCursor
+  - key: Down
+    mods: Shift
+    chars: "\e[1;2B"
+  - key: Down
+    mods: Control
+    chars: "\e[1;5B"
+  - key: Down
+    mods: Alt
+    chars: "\e[1;3B"
+  - key: Down
+    chars: "\e[B"
+    mode: ~AppCursor
+  - key: Down
+    chars: "\eOB"
+    mode: AppCursor
+  - key: Tab
+    mods: Shift
+    chars: "\e[Z"
+  - key: F1
+    chars: "\eOP"
+  - key: F2
+    chars: "\eOQ"
+  - key: F3
+    chars: "\eOR"
+  - key: F4
+    chars: "\eOS"
+  - key: F5
+    chars: "\e[15~"
+  - key: F6
+    chars: "\e[17~"
+  - key: F7
+    chars: "\e[18~"
+  - key: F8
+    chars: "\e[19~"
+  - key: F9
+    chars: "\e[20~"
+  - key: F10
+    chars: "\e[21~"
+  - key: F11
+    chars: "\e[23~"
+  - key: F12
+    chars: "\e[24~"
+  - key: Back
+    chars: "\x7F"
+  - key: Back
+    mods: Alt
+    chars: "\e\x7F"
+  - key: Insert
+    chars: "\e[2~"
+  - key: Delete
+    chars: "\e[3~"
+  - key: W
+    mods: Command
+    chars: "\x02&"
+  - key: T
+    mods: Command
+    chars: "\x02c"
+  - key: RBracket
+    mods: Command|Shift
+    chars: "\x02n"
+  - key: LBracket
+    mods: Command|Shift
+    chars: "\x02p"
+  - key: RBracket
+    mods: Command
+    chars: "\x02o"
+  - key: LBracket
+    mods: Command
+    chars: "\x02;"
+  - key: F
+    mods: Command
+    chars: "\x02/"
+mouse:
+  double_click:
+    threshold: 300
+  triple_click:
+    threshold: 300
+  hide_when_typing: true
+  url:
+    modifiers: Control
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: false
+live_config_reload: true

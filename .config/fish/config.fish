@@ -1,0 +1,27 @@
+set fish_greeting
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+alias cat="bat"
+alias sl="exa -G --color auto --icons -a -s type"
+alias ls="exa -G  --color auto --icons -a -s type"
+alias ll='exa -l --color always --icons -a -s type'
+alias grep="rg"
+alias find="fd"
+alias reload="source ~/.zshrc"
+alias vim="nvim"
+alias :q="exit"
+alias cd..="cd .."
+alias ..="cd .."
+alias du="dust"
+alias mv="mv -iv"
+alias cp="cp -riv"
+alias mkdir="mkdir -vp"
+alias df="df -h"
+alias rm="rm -ir"
+alias open="xdg-open"
+alias xclip="xclip -sel clip"
+alias merge="xrdb -merge ~/.Xresources"
+alias svim="sudoedit"
+alias fuck="code-insiders"
+alias als="alacritty-theme-switch"

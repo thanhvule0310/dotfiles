@@ -1,0 +1,25 @@
+# Colors (One Half Light)
+colors:
+  primary:
+    background: '0xffffff'
+    foreground: '0x121e64'
+
+  normal:
+    black: '0x24282e'
+    red: '0xdd0018'
+    green: '0x50a14f'
+    yellow: '0xf15500'
+    blue: '0x3130c9'
+    magenta: '0x8500c4'
+    cyan: '0x0096bf'
+    white: '0xfafafa'
+
+  bright:
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
