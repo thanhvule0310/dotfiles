@@ -20,10 +20,13 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + b
-  google-chrome
+  google-chrome-stable
 
 super + f
   nautilus
+
+super + c
+  code
 # bspwm hotkeys
 #
 
@@ -145,3 +148,6 @@ XF86MonBrightnessDown
 
 XF86MonBrightnessUp
   light -A 10
+
+Print
+  ~/.bin/screenshot.sh

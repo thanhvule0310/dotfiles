@@ -13,18 +13,17 @@ export PATH="$HOME/.bin:$PATH"
 export EDITOR="nvim"
 export TERM="xterm-256color"
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-export SPICETIFY_INSTALL="/home/vu/spicetify-cli"
-export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Theme
-ZSH_THEME="spaceship"
+ZSH_THEME=""
+eval "$(starship init zsh)"
 
 #Plugins 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions nvm zsh-z zsh-completions docker docker-compose docker-machine sudo npm yarn command-not-found npx)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions nvm zsh-z zsh-completions docker docker-compose docker-machine sudo npm yarn)
 
 # Sources
 source $ZSH/oh-my-zsh.sh
-source $HOME/.cargo/env
+source /usr/share/nvm/init-nvm.sh
 
 # Alias
 alias cat="bat"

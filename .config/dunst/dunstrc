@@ -70,12 +70,12 @@
 
 	# Defines width in pixels of frame around the notification window.
 	# Set to 0 to disable.
-	frame_width = 0
+	frame_width = 3
 
 	# Defines color of the frame around the notification window.
 
 	# Define a color for the separator.
-	frame_color = "#D8DEE9"
+	frame_color = "#2E3440"
 	# possible values are:
 	#  * auto: dunst tries to find a color fitting to the background;
 	#  * foreground: use the same color as the foreground;
@@ -170,7 +170,7 @@
 	max_icon_size = 48
 
 	# Paths to default icons.
-	icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
+	icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
 
 	### History ###
 
@@ -201,7 +201,7 @@
 	startup_notification = false
 	force_xinerama = false
 
-	corner_radius = 0
+	corner_radius = 10
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -253,26 +253,26 @@ format = "Discord\n%s\n%b"
     format = "<b>Now Playing...</b>\n%s"
     #new_icon = Spotify
     max_icon_size = 128
-    timeout = 20
+    timeout = 10
 
 
 [urgency_low]
-	background  = "#2E3440"
-	foreground  = "#D8DEE9"
+	background  = "#D8DEE9"
+	foreground  = "#2E3440"
 	timeout     = 4
 	#frame_color = "#A3BE8C"
 	icon	    = "/home/vu/.config/dunst/icons/low.svg"
 
 
 [urgency_normal]
-	background = "#2E3440"
-	foreground = "#D8DEE9"
+	background  = "#D8DEE9"
+	foreground  = "#2E3440"
 	timeout = 4
 	icon        = "/home/vu/.config/dunst/icons/normal.svg" 
 
 [urgency_critical]
-	background = "#2E3440"
-	foreground = "#D8DEE9"
+	background  = "#D8DEE9"
+	foreground  = "#2E3440"
 	#frame_color="#f07178"
 	timeout = 0
         icon        = "/home/vu/.config/dunst/icons/critical.svg" 

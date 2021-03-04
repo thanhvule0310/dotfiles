@@ -1,0 +1,21 @@
+#[character]
+#success_symbol = "[](bold green)"
+#error_symbol = "[](bold red)"
+
+[package]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[lua]
+symbol= " "
+
+[git_branch]
+symbol= " "
+
+[cmake]
+symbol = "卑 "
