@@ -13,7 +13,7 @@ let g:NERDTreeShowBookmarks=1
 
 " ===== AirLine =====
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'nord'
+let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -240,7 +240,7 @@ local gl = require('galaxyline')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'vista', 'dbui'}
 
-local colors = {
+local nord_colors = {
     bg = '#434C5E',
     fg = '#D8DEE9',
     yellow = '#EBCB8B',
@@ -252,6 +252,34 @@ local colors = {
     magenta = '#B48EAD',
     blue = '#81A1C1',
     red = '#BF616A'
+}
+
+local gruvbox = {
+    bg = '#3c3836',
+    fg = '#fbf1c7',
+    yellow = '#d79921',
+    cyan = '#689d6a',
+    darkblue = '#458588',
+    green = '#98971a',
+    orange = '#d65d0e',
+    violet = '#b16286',
+    magenta = '#b16286',
+    blue = '#458588',
+    red = '#cc241d'
+}
+
+local colors = {
+    bg = '#3c3836',
+    fg = '#d4be98',
+    yellow = '#d8a657',
+    cyan = '#89b482',
+    darkblue = '#7daea3',
+    green = '#a9b665',
+    orange = '#fe8019',
+    violet = '#d3869b',
+    magenta = '#d3869b',
+    blue = '#7daea3',
+    red = '#ea6962'
 }
 
 local function lsp_status(status)
