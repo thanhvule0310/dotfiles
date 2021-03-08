@@ -62,12 +62,12 @@ gruvbox_material = {
     'cyan': '#89b482'
 }
 
-colors = gruvbox_material
+colors = nord
 
 fonts = {
-    'normal': 'Fira Code Bold',
+    'normal': 'JetBrains Mono Bold',
     'mono': 'Fira Code',
-    'icons': 'FuraCode Nerd Font Bold'
+    'icons': 'FiraCode Nerd Font Medium'
 }
 
 styles = {

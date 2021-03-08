@@ -33,6 +33,8 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+from custom.windowname import WindowName as CustomWindowName
+
 import theme
 
 mod = "mod4"
@@ -40,9 +42,12 @@ terminal = "alacritty"
 
 keys = [
     # Apps
-    Key([mod], "f", lazy.spawn(theme.default_apps["file_manager"]), desc="Launch file manager"),
-    Key([mod], "b", lazy.spawn(theme.default_apps["browser"]), desc="Launch web browser"),
-    Key([mod], "c", lazy.spawn(theme.default_apps["code"]), desc="Launch visual studio code"),
+    Key([mod], "f", lazy.spawn(theme.default_apps["file_manager"]),
+        desc="Launch file manager"),
+    Key([mod], "b", lazy.spawn(theme.default_apps["browser"]),
+        desc="Launch web browser"),
+    Key([mod], "c", lazy.spawn(theme.default_apps["code"]),
+        desc="Launch visual studio code"),
 
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -100,11 +105,11 @@ keys = [
     Key([mod], "x", lazy.spawn("/home/vu/.bin/powermenu.sh"), desc="Power menu")
 ]
 
-group_names = [("WWW", {'layout': 'monadtall'}),
-               ("DEV", {'layout': 'monadtall'}),
-               ("SYS", {'layout': 'monadtall'}),
-               ("DOC", {'layout': 'monadtall'}),
-               ("CHAT", {'layout': 'monadtall'})]
+group_names = [("", {'layout': 'MONADTALL'}),
+               ("", {'layout': 'MONADTALL'}),
+               ("", {'layout': 'MONADTALL'}),
+               ("", {'layout': 'MONADTALL'}),
+               ("", {'layout': 'MONADTALL'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -117,70 +122,171 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 tile_styles = {
     'margin': 10,
     'border_width': theme.styles['border_width'],
-    'border_focus': theme.colors['fg_3'],
+    'border_focus': theme.colors['bg_4'],
     'border_normal': theme.colors['bg_3']
 }
 
 layouts = [
-    layout.Columns(border_focus_stack='#d75f5f'),
+    layout.MonadTall(**tile_styles, name='MONADTALL'),
+    # layout.Columns(border_focus_stack='#d75f5f', name="COLUMNS"),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(**tile_styles),
+    layout.Bsp(**tile_styles, name='BSPWM'),
     # layout.Matrix(),
-    layout.MonadTall(**tile_styles),
     # layout.MonadWide(),
     # layout.RatioTile(),
-    layout.Tile(**tile_styles),
-    layout.Max(**tile_styles),
+    layout.Tile(**tile_styles, name='TILE'),
+    layout.Max(**tile_styles, name='MAX'),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    layout.Floating(**tile_styles, fullscreen_border_width=3,
+                    max_border_width=3, name='FLOATING'),
 ]
 
 widget_defaults = dict(
     font=theme.fonts['icons'],
-    fontsize=12,
+    fontsize=14,
     padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
 widget_styles = {
-    'padding': 10
+    'fontsize': 14,
+    'background': theme.colors['bg_1'],
 }
+
+separate_style = {
+    'linewidth': 8, 'foreground': theme.colors['bg_1']
+}
+
+
+def update():
+    qtile.cmd_spawn(terminal + "-e paru")
+
+
+def kill_window():
+    qtile.cmd_spawn("xdotool getwindowfocus windowkill")
+
 
 screens = [
     Screen(
-        wallpaper="~/Pictures/Wallpapers/Image.png",
+        wallpaper="~/Pictures/Wallpapers/big_nord.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
                 widget.TextBox(
-                    text="",
-                    foreground=theme.colors['yellow'],
-                    background=theme.colors['bg_1'],
+                    text="ﬦ",
+                    foreground=theme.colors['blue'],
+                    background=theme.colors['bg_2'],
                     # font="Font Awesome 5 Free Solid",
                     fontsize=20,
                     padding=20,
                     mouse_callbacks={"Button1": lambda qtile: qtile.cmd_spawn(
                         "/home/vu/.bin/launcher.sh")},
                 ),
-                widget.GroupBox(**widget_styles,
-                                foreground=theme.colors['fg_3'], borderwidth=0, active=theme.colors['green'], block_highlight_text_color=theme.colors['fg_1'], urgent_text=theme.colors['orange']),
-                widget.WindowName(foreground=theme.colors['fg_1']),
-                widget.CurrentLayout(foreground=theme.colors['red']),
-                widget.CPU(format='CPU: {load_percent}%', **
+
+                widget.GroupBox(
+                    foreground=theme.colors['blue'], borderwidth=0, active=theme.colors['green'], block_highlight_text_color=theme.colors['blue'], urgent_text=theme.colors['orange'], font="FuraCode Nerd Font", padding_x=15, inactive=theme.colors['fg_3'], fontsize=18),
+
+                widget.Spacer(),
+                # widget.TextBox(
+                #     text=" ",
+                #     foreground=theme.colors['cyan'],
+                #     # fontsize=38,
+                #     font="Font Awesome 5 Free Solid",
+                # ),
+                # widget.WindowName(
+                #     foreground=theme.colors['cyan'],
+                #     width=bar.CALCULATED,
+                #     empty_group_string="Desktop",
+                #     max_chars=50,
+                #     mouse_callbacks={"Button2": kill_window},
+                # ),
+                # CustomWindowName(
+                #     foreground=theme.colors['cyan'],
+                #     width=bar.CALCULATED,
+                #     empty_group_string="Desktop",
+                #     max_chars=50,
+                #     mouse_callbacks={"Button2": kill_window},
+                # ),
+                widget.Spacer(),
+
+                # widget.TextBox(**widget_styles, text=' ',
+                #                foreground=theme.colors['red']),
+                # widget.CurrentLayout(
+                #     **widget_styles, foreground=theme.colors['red']),
+
+                widget.Sep(**separate_style),
+
+                widget.CheckUpdates(
+                    **widget_styles,
+                    foreground=theme.colors['orange'],
+                    colour_have_updates=theme.colors['blue'],
+                    custom_command="~/.bin/updates-arch-combined",
+                    display_format=" {updates}",
+                    execute=update,
+                    padding=20,
+                ),
+
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text=' ',
+                               foreground=theme.colors['red']),
+                widget.Pomodoro(**widget_styles,
+                                color_active=theme.colors['green'],
+                                color_inactive=theme.colors['red'],
+                                color_break=theme.colors['blue'],
+                                foreground=theme.colors['red']),
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text=' ',
+                               foreground=theme.colors['orange']),
+                widget.Wlan(
+                    **widget_styles, foreground=theme.colors['orange'], format='{essid}', interface='wlp3s0'),
+
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text=' ',
+                               foreground=theme.colors['blue']),
+                widget.CPU(format='{load_percent}%', **
                            widget_styles, foreground=theme.colors['blue']),
-                widget.Memory(
-                    format='MEM: {MemUsed: .0f}{mm}', **widget_styles),
+
+                widget.Sep(**separate_style),
+
+
+                widget.TextBox(**widget_styles, text='﬙',
+                               foreground=theme.colors['cyan']),
+                widget.Memory(**widget_styles,
+                              format='{MemUsed: .0f}MB', foreground=theme.colors['cyan']),
+
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text=' ',
+                               foreground=theme.colors['magenta']),
                 widget.Volume(**widget_styles,
                               foreground=theme.colors['magenta']),
-                widget.Systray(**widget_styles),
+
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text='盛 ',
+                               foreground=theme.colors['yellow']),
+                widget.Backlight(**widget_styles, backlight_name='intel_backlight',
+                                 change_command='light -S {0}', foreground=theme.colors['yellow']),
+
+                widget.Sep(**separate_style),
+
+                widget.TextBox(**widget_styles, text='ﭷ  ',
+                               foreground=theme.colors['green']),
                 widget.Clock(**widget_styles, format='%Y-%m-%d %a %I:%M %p',
                              foreground=theme.colors['green']),
+
+                widget.Sep(**separate_style),
+
             ],
-            30,
-            background=theme.colors['bg_1'],
-                    ),
+            35,
+            background=theme.colors['bg_1'], margin=[10, 10, 0, 10],
+        ),
     ),
 ]
 
