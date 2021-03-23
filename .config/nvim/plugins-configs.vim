@@ -240,7 +240,7 @@ local gl = require('galaxyline')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'vista', 'dbui'}
 
-local nord_colors = {
+local colors = {
     bg = '#434C5E',
     fg = '#D8DEE9',
     yellow = '#EBCB8B',
@@ -268,7 +268,7 @@ local gruvbox = {
     red = '#cc241d'
 }
 
-local colors = {
+local gruvbox_mcolors = {
     bg = '#3c3836',
     fg = '#d4be98',
     yellow = '#d8a657',

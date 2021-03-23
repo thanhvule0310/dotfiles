@@ -7,20 +7,20 @@ super + t
 	alacritty
 
 super + x
-	~/.config/polybar/colorblocks/scripts/powermenu.sh
+	~/.config/rofi/applets/android/powermenu.sh
 
 super + z
 	~/.bin/ibus.sh
 # program launcher
 super + @space
-  ~/.config/polybar/colorblocks/scripts/launcher.sh
+  ~/.config/polybar/scripts/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
 super + b
-  google-chrome-stable
+  brave
 
 super + f
   nautilus
@@ -134,13 +134,13 @@ super + {Left,Down,Up,Right}
 
 # Volume control
 XF86AudioLowerVolume
-  /home/vu/.bin/volume.sh down
+  /home/vu/.scripts/volume.sh down
 
 XF86AudioRaiseVolume
-  /home/vu/.bin/volume.sh up
+  /home/vu/.scripts/volume.sh up
 
 XF86AudioMute
-  /home/vu/.bin/volume.sh mute
+  /home/vu/.scripts/volume.sh mute
 
 # Brightness control
 XF86MonBrightnessDown
@@ -150,4 +150,4 @@ XF86MonBrightnessUp
   light -A 10
 
 Print
-  ~/.bin/screenshot.sh
+  ~/.config/rofi/applets/android/screenshot.sh

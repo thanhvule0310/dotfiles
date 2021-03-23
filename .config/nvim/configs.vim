@@ -1,7 +1,6 @@
 set termguicolors
 set background=dark
-let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material
+colorscheme nord
 set t_Co=256
 highlight Normal ctermbg=None
 highlight SpecialKey ctermbg=none ctermfg=8

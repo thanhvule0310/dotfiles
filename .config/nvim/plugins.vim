@@ -37,8 +37,6 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'akinsho/nvim-bufferline.lua'
-Plug 'morhetz/gruvbox'
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 " Javascript - Typescript - React Development
 Plug 'pangloss/vim-javascript'

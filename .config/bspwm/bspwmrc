@@ -2,22 +2,22 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-~/.config/polybar/launch.sh --colorblocks &
+~/.config/polybar/launch.sh &
 picom --experimental-backends &
 polybar example &
 nitrogen --restore &
 xsetroot -cursor_name left_ptr &
 ~/.config/dunst/load.sh &
 numlockx &
-pulseeffects --gapplication-service &
 
-#bspc monitor -d WEB DEV TERM READ CHILL CHAT ETC
-bspc monitor -d 一 二 三 四 五 六 七 八 九 十
+bspc monitor -d WWW DEV TERM DEBUG MUSIC CHAT ETC
+#bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 
 bspc config border_width        3
 bspc config window_gap          10
-bspc config focused_border_color "#4C566A"
-bspc config normal_border_color  "#2E3440"
+#bspc config focused_border_color "#5E81AC"
+bspc config focused_border_color "#3B4252"
+bspc config normal_border_color  "#3B4252"
 bspc config focus_follows_pointer true
 
 bspc config split_ratio          0.52
@@ -29,3 +29,5 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+#bspc rule -a Alacritty desktop='^3'
+#bspc rule -a Code desktop='^2'

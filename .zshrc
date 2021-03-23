@@ -15,8 +15,10 @@ export TERM="xterm-256color"
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 
 # Theme
-ZSH_THEME=""
-eval "$(starship init zsh)"
+ZSH_THEME="typewritten"
+TYPEWRITTEN_RIGHT_PROMPT_PREFIX=" "
+TYPEWRITTEN_DISABLE_RETURN_CODE="true"
+TYPEWRITTEN_SYMBOL="$"
 
 #Plugins 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions nvm zsh-z zsh-completions docker docker-compose docker-machine sudo npm yarn)
@@ -50,6 +52,7 @@ alias merge="xrdb -merge ~/.Xresources"
 alias svim="sudoedit"
 alias fuck="code-insiders"
 alias als="alacritty-theme-switch"
+alias mirror="sudo reflector --latest 10 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # Functions
 ex ()
