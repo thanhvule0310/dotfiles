@@ -1,16 +1,10 @@
-# ~/.dotfiles
+# ~/.dotfiles - Just my backup dotfiles :)
 
 ![Thumbnail](thumb.png)
 
 ## Details
 
-- OS: Arch Linux
-- WM: bspwm
-- Shell: zsh (typewritten)
+- OS: Fedora
+- Shell: zsh (spaceship)
 - Terminal: Alacritty
-- Editor: Visual Studio Code, Neovim
-- File Manager: nautilus
-- Laucher: rofi
-- Notification: Dunst
-- Bar: Polybar
-- Brower: Brave
+- Editor: Visual Studio Code, Neovim Nightly
