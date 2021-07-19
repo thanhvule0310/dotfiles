@@ -1,0 +1,66 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "graphql"
+  ],
+  "suggest.timeout": 5000,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "all",
+  "suggest.completionItemKindLabels": {
+    "keyword": "\ue714",
+    "variable": "\ue79b",
+    "value": "\uf89f",
+    "operator": "\u03a8",
+    "function": "\uf794",
+    "reference": "\ufa46",
+    "constant": "\uf5cd",
+    "method": "\uf794",
+    "struct": "\ufb44",
+    "class": "\uf0e8",
+    "interface": "\uf417",
+    "text": "\ue612",
+    "enum": "\uf435",
+    "enumMember": "\uf02b",
+    "module": "\uf40d",
+    "color": "\ue22b",
+    "property": "\ue624",
+    "field": "\ufc33",
+    "unit": "\uf475",
+    "event": "\ufacd",
+    "file": "\uf723",
+    "folder": "\uf114",
+    "snippet": "\uf668",
+    "typeParameter": "\uf728",
+    "default": "\uf29c"
+  },
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.infoSign": "\uf05a",
+  "diagnostic.hintSign": "\uf0a9",
+  "diagnostic.warningSign": "\uf071",
+  "diagnostic.errorSign": "\uf658"
+}
