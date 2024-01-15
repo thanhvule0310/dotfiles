@@ -1,0 +1,64 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+format = "$container$all"
+
+[container]
+symbol = "󰿦"
+style = "red bold"
+format = " [$symbol $name]($style)"
+
+[character]
+success_symbol = "[ ❯](bold green)"
+error_symbol = "[ ❯](bold red)"
+vimcmd_symbol = "[ ❮](bold green)"
+vimcmd_visual_symbol = "[ ❮](bold yellow)"
+vimcmd_replace_symbol = "[ ❮](bold purple)"
+vimcmd_replace_one_symbol = "[ ❮](bold purple)"
+
+[directory]
+format = ' [ $path]($style)[$read_only]($read_only_style) '
+style = "bold blue"
+
+[package]
+symbol = "󰏓 "
+style = 'bold yellow'
+
+[nodejs]
+symbol = "󰋘 "
+
+[python]
+symbol = "󰌠 "
+
+[lua]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "purple"
+
+[cmake]
+symbol = "󰲉 "
+
+[golang]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[c]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[bun]
+symbol = "🍙 "
+
+[dotnet]
+symbol = "󰪮 "
+style = "bold purple"

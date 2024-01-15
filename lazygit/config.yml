@@ -1,0 +1,30 @@
+---
+gui:
+    nerdFontsVersion: "3"
+    border: "single"
+    showBottomLine: false
+    theme:
+        activeBorderColor:
+            - magenta
+            - bold
+        inactiveBorderColor:
+            - white
+        optionsTextColor:
+            - blue
+        selectedLineBgColor:
+            - black
+            - bold
+        selectedRangeBgColor:
+            - black
+            - bold
+        cherryPickedCommitBgColor:
+            - cyan
+        cherryPickedCommitFgColor:
+            - blue
+        unstagedChangesColor:
+            - red
+git:
+    parseEmoji: true
+    paging:
+        colorArg: always
+        pager: diff-so-fancy

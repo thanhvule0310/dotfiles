@@ -1,0 +1,47 @@
+[default]
+nerdfont = ""
+color = "none"
+
+[icons.paru]
+nerdfont = "󰮯"
+color = "yellow"
+
+[icons.docker]
+nerdfont = "󰡨"
+color = "blue"
+
+[icons.node]
+nerdfont = "󰋘"
+color = "green"
+
+[icons.sudo]
+nerdfont = "󰌾"
+color = "red"
+
+[icons.npm]
+nerdfont = ""
+color = "red"
+
+[icons.zsh]
+nerdfont = ""
+color = "none"
+
+[icons.lazygit]
+nerdfont = ""
+color = "magenta"
+
+[icons.gh]
+nerdfont = ""
+color = "magenta"
+
+[icons.git]
+nerdfont = ""
+color = "red"
+
+[icons.cargo]
+nerdfont = ""
+color = "red"
+
+[icons.nvim]
+nerdfont = ""
+color = "green"

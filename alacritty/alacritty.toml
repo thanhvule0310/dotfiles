@@ -1,0 +1,125 @@
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program = "/usr/bin/tmux"
+
+[mouse]
+hide_when_typing = true
+
+[font]
+size = 14.5
+
+[font.glyph_offset]
+x = 0
+y = 5
+
+[font.offset]
+x = 0
+y = 10
+
+[font.normal]
+family = "Liga SFMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Liga SFMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "CartographCF Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "CartographCF Nerd Font"
+style = "Italic"
+
+[window]
+decorations = "none"
+dynamic_padding = false
+opacity = 1.0
+# startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 90
+lines = 24
+
+[window.padding]
+x = 0
+y = 0
+
+[colors.primary]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+bright_foreground = "#CDD6F4"
+
+[colors.cursor]
+text = "#1E1E2E"
+cursor = "#F5E0DC"
+
+[colors.vi_mode_cursor]
+text = "#1E1E2E"
+cursor = "#B4BEFE"
+
+[colors.search.matches]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.search.focused_match]
+foreground = "#1E1E2E"
+background = "#A6E3A1"
+
+[colors.footer_bar]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.hints.start]
+foreground = "#1E1E2E"
+background = "#F9E2AF"
+
+[colors.hints.end]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.selection]
+text = "#1E1E2E"
+background = "#F5E0DC"
+
+[colors.normal]
+black = "#313244"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#cba6f7"
+cyan = "#94E2D5"
+white = "#bac2de"
+
+[colors.bright]
+black = "#45475a"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#cba6f7"
+cyan = "#94E2D5"
+white = "#a6adc8"
+
+[colors.dim]
+black = "#585b70"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#cba6f7"
+cyan = "#94E2D5"
+white = "#9399b2"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#FAB387"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#F5E0DC"

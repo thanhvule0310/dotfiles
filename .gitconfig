@@ -1,0 +1,48 @@
+[user]
+    email = thanhvule0310@gmail.com
+    name = Vu Le Thanh
+[init]
+    defaultBranch = main
+[push]
+    default = current
+[pull]
+    rebase = true
+[diff]
+    tool = nvimdiff
+    guitool = nvimdiff
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
+[mergetool]
+    keepBackup = false
+    trustExitCode = false
+    prompt = true
+[difftool]
+    prompt = false
+[alias]
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+    autocrlf = input
+    editor = nvim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+    diffFilter = diff-so-fancy --patch
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+[color "diff-highlight"]
+    newHighlight = green bold 22
+    newNormal = green bold
+    oldHighlight = red bold 52
+    oldNormal = red bold
+[color "diff"]
+    commit = yellow bold
+    frag = magenta bold
+    func = 146 bold
+    meta = 11
+    new = green bold
+    old = red bold
+    whitespace = red reverse
