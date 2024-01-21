@@ -3,11 +3,10 @@
 This repository contains my personal dotfiles, configurations, and scripts for customizing my development environment.
 
 ```md
-- os: Arch Linux
-- de: Gnome
-- ide: Neovim (nightly)
-- terminal: WezTerm/Alacritty/Kitty
-- shell: zsh/fish
+- os: Windows 11
+- ide: Neovim (nightly) / Visual Studio Code
+- terminal: Windows Terminal
+- shell: zsh
 - theme: catppuccin
 ```
 
