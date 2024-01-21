@@ -1,3 +1,5 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 
@@ -17,24 +19,10 @@ eval "$(fnm env --use-on-cd)"
 
 plugins=(fast-syntax-highlighting zsh-completions zsh-autosuggestions extract rust yarn docker npm golang zsh-vi-mode)
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
-
-function update-all {
-	echo -e "\\033[0;34m\\033[1m::\\033[0m\\033[1m Cleanup"
-	sudo paccache -rk3
-	paru -Sc --aur --noconfirm
-
-	echo -e "\\033[0;34m\\033[1m::\\033[0m\\033[1m Sync fastest mirrors"
-	rate-mirrors arch | sudo tee /etc/pacman.d/mirrorlist
-	rate-mirrors chaotic-aur | sudo tee /etc/pacman.d/chaotic-mirrorlist
-
-	paru -Syyu
-
-	echo -e "\\033[0;34m\\033[1m::\\033[0m\\033[1m Flatpak"
-	flatpak update
-}
 
 # pnpm
 export PNPM_HOME="/home/thanhvule0310/.local/share/pnpm"
